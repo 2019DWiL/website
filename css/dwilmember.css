@@ -1,0 +1,417 @@
+@charset "UTF-8";
+html {
+    font-family: "Noto Sans JP", sans-serif;
+    /* ★追加：ページ内リンクがすべて滑らかなスクロールになります */
+    scroll-behavior: smooth;
+    background-color: #c3c3c3; /* サイト全体の背景を画像と同じ薄いグレーに */
+}
+
+/* --- header s --- */
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================
+   HEADER LAYOUT (ヘッダー全体)
+   ========================================== */
+
+header {
+    /* ★ヘッダー全体の背景は「薄いグレー」だけにする（写真はここには書かない） */
+    background-color: #f0f0f0; 
+    height: 500px;             /* 画像のような比率にするため高さを固定 */
+    /* height: 100vh; */
+    position: relative; /* 写真を自由に配置するための目印 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 上にHome、下に青い帯を綺麗に分ける */
+    overflow: hidden;   /* 写真がヘッダーからはみ出さないようにガード */
+}
+
+/* ① 最上部：Homeナビの設定 */
+.top-nav ul {
+    display: flex;
+    justify-content: space-between; /* 左右に振り分ける */
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 10;
+}
+.top-nav a {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+/* ★ここを追加：右側の文字のスタイル */
+.top-nav-text {
+    color: #000000;       /* 文字の色（黒） */
+    font-weight: bold;    /* Homeと同じように太字にする */
+    font-size: 1rem;      /* 文字の大きさ（お好みで1.1remなどに広げてもOK） */
+    letter-spacing: 0.05em; /* 文字の間隔を少しだけ広げてスタイリッシュに */
+}
+.dummy-nav span {
+    margin-left: 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #000;
+}
+
+/* ② 中央：背景写真の設定（画像が絶対に切れない設定） */
+.header-bg-image {
+    position: absolute;
+    top: 50px;                 /* Homeナビの下から配置 */
+    /* top: 100px;         ★上から100px下げた位置に配置（グレーの隙間ができる） */
+    left: 0;
+    width: 100%;
+    height: 380px;             /* 写真が表示される高さを確保 */
+    /* height: calc(100vh - 100px); 画面全体の高さから、下げた分の100pxを引いたぴったりサイズ */
+    
+    /* 写真の設定（ブレンドモードは使わないので、写真本来の色が出ます！） */
+    background-image: url(../img/membertop.JPG);
+    background-repeat: no-repeat;
+    background-size: contain;   /* ★全体が絶対に画面内に収まるマジック */
+    /* background-size: cover; */
+    background-position: center center;
+    /* background-position: center; */
+    opacity: 0.85;             /* ★少しだけ透明度を持たせる */
+    z-index: 1;         /* 写真を文字の後ろに回す */
+}
+/* ③ 最下部：青いタイトルとメニューの一体化帯 */
+.title-bar {
+    background-color: #3b82f6; /* 画像のような鮮やかな青 */
+    display: flex;
+    align-items: center;
+    /* ★変更1：space-between から center に変更（これで両方が真ん中に寄ります） */
+    justify-content: center; 
+    /* ★変更2：タイトルとメンバー名の間のお好みの隙間（自由に調整してOK！） */
+    gap: 40px;
+    padding: 0.5rem 0;
+    position: relative;
+    z-index: 10;
+}
+
+.title-bar h1 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin: 0;
+    background-color: transparent; /* 背景色をリセット */
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.member-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    padding-top: 0; /* 古いコードの上書きをリセット */
+}
+.member-nav li {
+    border-right: none;        /* 青い帯の時は区切り線なし */
+
+}
+.member-nav a {
+    color: #ffffff !important; /* 文字色を白に強制固定 */
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    padding: 0.3rem 1rem;
+    /* ★これを入れると、文字の後ろにうっすら黒い影がついて劇的に見やすくなります */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+.member-nav a:hover {
+    opacity: 0.7;
+}
+/* --- タイトルやメニューが写真の下に隠れないように調整 ---
+.top-nav, .empty1, h1, .member-nav {
+    position: relative;
+    z-index: 10;        写真よりも手前に表示させる 
+} */
+
+/* ==========================================
+   MAIN CONTENT (メンバー詳細エリア)
+   ========================================== */
+
+.member-detail {
+    max-width: 900px;        /* 画面が大きくなりすぎないように制限 */
+    margin: 5rem auto;       /* 上下に余白を作り、左右は中央寄せに */
+    padding: 0 20px;         /* 画面端のギリギリに文字がいかないための余白 */
+}
+
+/* ① 上段：名前 */
+.member-name {
+text-align: left;        /* 左寄せに変更 */
+    margin-bottom: 2rem;     
+    border-bottom: 2px solid #000; 
+    padding-bottom: 0.5rem;
+}
+.member-name h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+.member-name h2 span {
+    font-size: 1.5rem;       /* (Gt) などのパート名を少し小さく */
+    color: #666;
+}
+
+/* ② 中段：写真とプロフィールの横並び（Flexbox） */
+.member-profile-box {
+    display: flex;
+    gap: 40px;               /* 写真と文字の間のすき間 */
+    align-items: flex-start; /* 写真と文字の上端を揃える */
+    margin-bottom: 4rem;     /* 下段（SNS）との間の余白 */
+}
+
+.profile-photo {
+    flex: 0 0 270px;         /* 写真の横幅を固定 */
+}
+
+.profile-photo img {
+    width: 100%;             
+    height: 200px;           /* 縦横の比率を綺麗にするため固定 */
+    object-fit: cover;       /* 縦横比を保ったまま自動トリミング */
+    background-position: center; 
+    border-radius: 4px;      
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+
+.profile-text {
+    flex: 1;                 /* 残りのスペース（60%分）をすべて使う */
+}
+.profile-text h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.profile-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+/* ==========================================
+   ★ここを追加：メンバー個別のProfileの色設定
+   ========================================== */
+
+/* ① マス(Gt)のProfileを赤にする */
+#member-masu .profile-text h3 {
+    color: #a60800; /* 鮮やかな赤（お好みの赤に変更してOK） */
+}
+/* ② のん(Vo/Gt)のProfileを黄色にする */
+#member-non .profile-text h3 {
+    color: #ffd60a; /* 視認性の良い少し濃いめの黄色 */
+}
+#member-satton .profile-text h3 {
+    color: #00ff40; /* 視認性の良い少し濃いめの黄色 */
+}
+#member-tina .profile-text h3 {
+    color: #0000ff; /* 視認性の良い少し濃いめの黄色 */
+}
+#member-naru .profile-text h3 {
+    color: #000000; /* 視認性の良い少し濃いめの黄色 */
+}
+
+/* ③ 下段：SNS */
+.member-sns {
+    text-align: center;      /* SNSエリア全体を中央寄せ */
+}
+.member-sns h3 {
+    font-size: 1.5rem;
+    /* ★変更：1rem だったのを 2.5rem に増やして、下のボタンとの間隔を広げます */
+    margin-bottom: 2.5rem;
+}
+.member-sns ul {
+    display: flex;
+    justify-content: center; /* リンクを横並びにして中央に寄せる */
+    gap: 30px;               /* リンク同士の間隔 */
+}
+.member-sns a {
+    font-size: 1rem;
+    /* color: #ffffff;
+    background-color: #000000; */
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;     
+    transition: opacity 0.3s;    
+}
+.member-sns a:hover {
+    opacity: 0.7;
+}
+
+.snsmasu {
+        color: #ffffff;
+    background-color: #ff0000;
+}
+
+.snsnon {
+            color: #000000;
+    background-color: #ffff00;
+}
+
+.snssatoko {
+            color: #000000;
+    background-color: #00ff2a;
+}
+
+.snstina {
+            color: #ffffff;
+    background-color: #001eff;
+}
+
+.snsn {
+            color: #ffffff;
+    background-color: #000000;
+}
+
+/* --- main e --- */
+
+/* ==========================================
+   フッターのレイアウト設定
+   ========================================== */
+footer {
+    /* 背景色（ヘッダーと合わせた白の半透明） */
+    background-color: rgba(0, 255, 255, 0.15); 
+    /* 上下の余白（ボタンが窮屈にならないように広めに） */
+    padding: 4rem 0 2rem 0; 
+    /* 中身をすべて中央寄せにする */
+    text-align: center; 
+    /* 画面下部に少し境界線を引いて引き締める（お好みで） */
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Homeボタンの見た目 */
+.footer-btn a {
+    display: inline-block;  /* 横幅と高さを指定できるようにする */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+    background-color: #727272; /* 黒いボタン */
+    padding: 0.8rem 2.5rem;    
+    border-radius: 30px;       
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s;
+}
+
+
+/* ボタンにマウスを乗せた時（ホバー時）の動き */
+.footer-btn a:hover {
+    opacity: 0.7;
+}
+
+/* コピーライト（著作権表示・一番下の小さな文字） */
+.copyright {
+    font-size: 0.8rem;
+    color: #666666;
+    margin-top: 3rem;          /* ボタンとの間の隙間 */
+}
+
+.empty1 {
+    height: 2.5rem;
+}
+
+/* ==========================================
+   ★ここを追加：パート名() もメンバーカラーにする
+   ========================================== */
+
+/* マスの(Gt) を「赤」にする */
+#member-masu .member-name h2 span {
+    color: #a60800;
+}
+
+/* のんの(Vo/Gt) を「黄色」にする */
+#member-non .member-name h2 span {
+    color: #ffd60a;
+}
+
+/* さっとんの(Key/cho) を「緑」にする */
+#member-satton .member-name h2 span {
+    color: #00ff40;
+}
+
+/* Tinaの(Dr) を「青」にする */
+#member-tina .member-name h2 span {
+    color: #0000ff;
+}
+
+/* なるの(Vo/Ba) を「黒」にする */
+#member-naru .member-name h2 span {
+    color: #000000;
+}
+
+/* ==========================================
+   ★ここを追加：スマートフォン・タブレット対応 (UI対応)
+   ========================================== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. ヘッダー全体の高さをスマホ用に少し縮める */
+    header {
+        overflow: visible;
+    }
+
+    /* 集合写真のエリアもスマホの比率に合わせて調整 */
+    .header-bg-image {
+        height: 250px;
+        top: 70px;
+    }
+
+    /* 2. 青い帯の中身を、縦並びに切り替える */
+    .title-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 1rem 0;
+    }
+
+    /* スマホだとメニューが入り切らないので、折り返して並ぶようにする */
+    .member-nav ul {
+        flex-wrap: wrap;       /* 画面幅を超えたら自動で2行目に折り返す */
+        justify-content: center;
+        gap: 0.5rem 1rem;       /* リンク同士の上下左右の間隔 */
+    }
+
+    .member-nav a {
+        font-size: 0.9rem;      /* 文字を少しだけ小さくして押しやすく */
+        padding: 0.4rem 0.6rem;
+    }
+
+    /* 3. メインコンテンツ：写真とプロフィールを縦並びにする */
+    .member-profile-box {
+        flex-direction: column; /* 写真を上、文章を下に並べる */
+        gap: 20px;
+        align-items: center;    /* 写真を中央に寄せる */
+    }
+
+    /* 写真の横幅をスマホの画面幅（いっぱい）に合わせる */
+    .profile-photo {
+        flex: none;
+        width: 100%;
+        max-width: 340px;       /* 大きくなりすぎない上限 */
+    }
+
+    .profile-photo img {
+        height: 220px;          /* 横長感をスマホでもキープ */
+    }
+
+    /* プロフィール文章の文字をスマホで見やすいサイズにする */
+    .profile-text {
+        width: 100%;
+    }
+    
+    .profile-text h3 {
+        text-align: center;     /* 「Profile」の見出しを真ん中にしてバランスを整える */
+        margin-bottom: 1rem;
+    }
+
+    /* 4. SNSボタン：スマホの画面幅に合わせて綺麗に並べる */
+    .member-sns ul {
+        gap: 15px;              /* 隙間をスマホ用に少し狭める */
+    }
+    
+    .member-sns a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.2rem; /* 指でタップしやすい大きさ */
+    }
+    
+
+}

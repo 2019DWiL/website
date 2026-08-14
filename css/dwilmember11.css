@@ -1,0 +1,56 @@
+@charset "UTF-8";
+html {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/*header s*/
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+header {
+    /* background-image: url(../img/top.JPG); */
+    background-color:rgba(255,255,255,0.7);
+    background-blend-mode:lighten; /*光彩*/
+    height: 100vh;
+}
+header ul {
+    display: flex;
+    width: 22%;
+    margin-left: auto;
+    margin-right: 7rem;
+    padding-top: 1rem;
+}
+header ul li {
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    margin: 0.5rem 0;
+    /* border: 1px solid #000; 枠をつける */
+    border-right: 3px solid #000;
+}
+header ul li:last-child {
+    border-right: none;
+}
+header ul li a {
+    display: block;
+    padding: 0.3rem 1rem;
+    color: #000000;
+    font-weight: bolder;
+}
+header ul li a:hover {
+    opacity: 0.5;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 80px;
+    text-align: center;
+    background-color: aqua;
+}
+.empty1 {
+    height: 2.5rem;
+}
+/*header e*/

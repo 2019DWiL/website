@@ -1,0 +1,307 @@
+body {
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: "Trebuchet MS", sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ロゴ */
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+}
+
+.site-title-area {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.glly {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* 年別メニュー全体 */
+.menu-section {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #ffc5c5;
+    text-align: center;
+}
+
+/* 年別メニュー */
+.menu-section:not(.home-section) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+/* 年 */
+.nav-header {
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 日付 */
+.menu-section div {
+    margin-top: 10px;
+}
+
+.menu-section a {
+    color: #e2ffc7;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.menu-section a.active {
+    color: #ff3333;
+}
+
+/* HOME */
+.home-section {
+    text-align: center;
+}
+
+.home-btn {
+    display: inline-block !important;
+    width: 50px !important;
+    height: 20px !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    line-height: 20px !important;
+    box-sizing: border-box !important;
+
+    background-color: #005a25;
+    color: #9a0000;
+    text-decoration: none;
+    border: 1px solid #170099;
+    border-radius: 2px;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.home-btn:hover {
+    background-color: #002e1a;
+}
+
+/* コピーライト */
+.copyright {
+    font-size: 0.7rem;
+    color: #888;
+}
+
+/* メインコンテンツ */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    display: block;
+}
+
+.main-content img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* ギャラリー */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-header {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-header h2 {
+    font-size: 1rem;
+    margin: 0;
+    color: #fff;
+    font-weight: normal;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+/* セットリスト */
+.gallery-setlist-area {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.setlist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.setlist-list {
+    list-style: none;
+    width: 50%;
+    padding: 0;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.setlist-list li {
+    margin-bottom: 2px;
+    line-height: 1.5;
+}
+
+/* セットリスト画像 */
+.setlist-gallery-preview {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: none;
+}
+
+.setlist-gallery-preview img {
+    width: auto;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: fill;
+}
+
+/* YouTube */
+.youtube-link {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.youtube-logo {
+    width: 0.2rem;
+    height: auto;
+    vertical-align: middle;
+    margin-bottom: 0.2rem;
+}
+
+.youtube-modal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 15px;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.youtube-modal-btn img.youtube-logo {
+    width: 20px !important;
+    height: auto !important;
+    max-width: none !important;
+}
+
+/* モーダル */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* =========================
+   スマートフォン
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+    /* 年別メニュー */
+    .menu-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* HOME */
+    .home-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* セットリスト画像 */
+    .setlist-gallery-preview img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        object-fit: contain;
+    }
+}
