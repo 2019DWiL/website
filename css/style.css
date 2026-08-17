@@ -12,7 +12,7 @@ ul {
 }
 
 header {
-    background-image: url(/img/top.jpg);
+    background-image: url(img/top.jpg);
     background-color:rgba(255,255,255,0.7);
     background-blend-mode:lighten; /*光彩*/
     height: 100vh;
