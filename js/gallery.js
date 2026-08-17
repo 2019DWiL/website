@@ -3,7 +3,7 @@ const galleries = {
   droppongi: ['img/livearchive/2026roppongi/11.jpg', 'img/livearchive/2026roppongi/1.jpg', 'img/livearchive/2026roppongi/2.jpg', 'img/livearchive/2026roppongi/3.jpg', 'img/livearchive/2026roppongi/4.jpg', 'img/livearchive/2026roppongi/5.jpg', 'img/livearchive/2026roppongi/6.jpg', 'img/livearchive/2026roppongi/7.jpg', 'img/livearchive/2026roppongi/8.jpg', 'img/livearchive/2026roppongi/9.jpg', 'img/livearchive/2026roppongi/10.jpg', 'img/livearchive/2026roppongi/12.jpg'],
   adm: ['img/livearchive/20260322adm/1.jpg', 'img/livearchive/20260322adm/2.jpg', 'img/livearchive/20260322adm/3.jpg', 'img/livearchive/20260322adm/4.jpg', 'img/livearchive/20260322adm/5.jpg', 'img/livearchive/20260322adm/6.jpg', 'img/livearchive/20260322adm/7.jpg', 'img/livearchive/20260322adm/8.jpg', 'img/livearchive/20260322adm/9.jpg', 'img/livearchive/20260322adm/10.jpg', 'img/livearchive/20260322adm/11.jpg'],
   mugenf: ['img/livearchive/2025mugenrock/1.jpg', 'img/livearchive/2025mugenrock/2.jpg', 'img/livearchive/2025mugenrock/3.jpg', 'img/livearchive/2025mugenrock/4.jpg', 'img/livearchive/2025mugenrock/5.jpg', 'img/livearchive/2025mugenrock/6.jpg', 'img/livearchive/2025mugenrock/7.jpg', 'img/livearchive/2025mugenrock/8.jpg', 'img/livearchive/2025mugenrock/9.jpg', 'img/livearchive/2025mugenrock/10.jpg', 'img/livearchive/2025mugenrock/11.jpg', 'img/livearchive/2025mugenrock/12.jpg'],
-  weaver: ['img/livearchive/20231111weaver/1.jpg', 'img/livearchive/20231111weaver/2.jpg', 'img/livearchive/20231111weaver/3.jpg', 'img/livearchive/20231111weaver/4.jpg', 'img/livearchive/20231111weaver/5.jpg'],
+  weaver: ['img/livearchive/20231111weaver/1.jpg', 'img/livearchive/20231111weaver/2.jpg', 'img/livearchive/20231111weaver/3.jpg', 'img/livearchive/20231111weaver/4.jpg', 'img/livearchive/20231111weaver/5.jpg', 'img/livearchive/20231111weaver/6.jpg', 'img/livearchive/20231111weaver/7.jpg', 'img/livearchive/20231111weaver/8.jpg', 'img/livearchive/20231111weaver/9.jpg', 'img/livearchive/20231111weaver/10.jpg', 'img/livearchive/20231111weaver/11.jpg', 'img/livearchive/20231111weaver/12.jpg'],
   trppngi: ['img/livearchive/20240323shinsekai/1.jpg', 'img/livearchive/20240323shinsekai/2.jpg', 'img/livearchive/20240323shinsekai/3.jpg', 'img/livearchive/20240323shinsekai/4.jpg', 'img/livearchive/20240323shinsekai/5.jpg', 'img/livearchive/20240323shinsekai/6.jpg', 'img/livearchive/20240323shinsekai/7.jpg', 'img/livearchive/20240323shinsekai/8.jpg', 'img/livearchive/20240323shinsekai/9.jpg', 'img/livearchive/20240323shinsekai/10.jpg', 'img/livearchive/20240323shinsekai/11.jpg', 'img/livearchive/20240323shinsekai/12.jpg'],
   fshareido: ['img/livearchive/20220619elle/1.jpg', 'img/livearchive/20220619elle/2.jpg', 'img/livearchive/20220619elle/3.jpg', 'img/livearchive/20220619elle/4.jpg', 'img/livearchive/20220619elle/5.jpg', 'img/livearchive/20220619elle/6.jpg', 'img/livearchive/20220619elle/7.jpg', 'img/livearchive/20220619elle/8.jpg', 'img/livearchive/20220619elle/9.jpg', 'img/livearchive/20220619elle/10.jpg', 'img/livearchive/20220619elle/11.jpg', 'img/livearchive/20220619elle/12.jpg', 'img/livearchive/20220619elle/13.jpg', 'img/livearchive/20220619elle/14.jpg', 'img/livearchive/20220619elle/15.jpg', 'img/livearchive/20220619elle/16.jpg'],
 };
@@ -49,8 +49,8 @@ navLinks.forEach(link => {
 const setlists = {
   droppongi: ['1. ミス・ブランニューデイ', '2. 遠くまで', '3. 人として', '4. 焼け野が原', 'encore. ららら'],
   adm: ['1. 名もなき詩', '2. 19 Growing Up', '3. FACES PLACES', '4. LA LA LA LOVESONG', '5. ららら'],
-  mugenf: ['1. Hello again', '2. song2'],
-  weaver: ['1. Crazy', '2. Reminder', '3. Real Voice', '4. 茜色の約束', '5. Your Song', 'encole. Two Of Us'],
+  mugenf: ['1. Hello again', '2. 世界で一番熱い夏', '3. everything~it`s you~', '4. Grip!', '5. 歩いて帰ろう'],
+  weaver: ['1. Crazy', '2. Reminder', '3. Real Voice', '4. 茜色の約束', '5. Your Song', 'encore. Two Of Us'],
   trppngi: ['1. GRAMOROUS SKY', '2. 紺碧の夜に', '3. Ghost In The Rain', '4. 強く儚い者たち', '5. 冒険者たち', '6. 遠くまで'],
   fshareido: ['1. 紺碧の夜に', '2. 貴方の恋人になりたいのです', '3. ELLEGARDENメドレー', '(風の日 ▶ 虹 ▶ 金星 ▶ Supernova)']
 };
@@ -70,7 +70,7 @@ function toggleSetlist() {
   const setlistImages = {
     droppongi: ['img/livearchive/2026roppongi/flr.jpg'],
     adm: ['img/livearchive/20260322adm/ik.jpg'],
-    mugenf: ['img/livearchive/f2025mugenrock/mfl25.png'],
+    mugenf: ['img/livearchive/2025mugenrock/mfl25.jpg'],
     weaver: ['img/livearchive/20231111weaver/weaver.png'], // weaver用の画像パスを指定
     trppngi: ['img/livearchive/flyer/dwilflyer.png'],
     fshareido: ['img/livearchive/20220619elle/0619shareidoflyer.png'],

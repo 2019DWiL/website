@@ -12,10 +12,12 @@ ul {
 }
 
 header {
-    background-image: url(../img/top.JPG);
+    background-image: url(../img/top.jpg);
     background-color:rgba(255,255,255,0.7);
     background-blend-mode:lighten; /*光彩*/
     height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 header ul {
     display: flex;
@@ -312,6 +314,13 @@ footer div {
 @media screen and (max-width: 768px) {
     /* メニュー */
 
+    header {
+    background-image: url(../img/topmobile.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+    
     header nav ul {
         flex-direction: column;
         align-items: flex-end;

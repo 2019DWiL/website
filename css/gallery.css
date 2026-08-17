@@ -266,17 +266,25 @@ body {
 
 @media (max-width: 768px) {
 
+    /* sidebar と main-content を縦並びにする */
+    .sidebar,
+    .main-content {
+        float: none;
+    }
+
+    /* 以下は現在の設定 */
     .main-content {
         margin-left: 0;
         width: 100%;
-        padding: 10px;
+        padding: 10px 15px;
+        box-sizing: border-box;
     }
 
     .sidebar {
         position: static;
         width: 100%;
         height: auto;
-        padding: 30px 20px;
+        padding: 20px 10px;
         box-sizing: border-box;
         align-items: center;
     }
@@ -285,6 +293,12 @@ body {
     .menu-section {
         width: 100%;
         text-align: center;
+        font-size: 16px;
+    }
+
+    .nav-header,
+    .nav-link {
+        font-size: 16px;
     }
 
     /* HOME */
@@ -293,11 +307,20 @@ body {
         text-align: center;
     }
 
+    /* 写真 */
     .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 8px;
+        width: 100%;
     }
 
-    /* セットリスト画像 */
+    .gallery-grid img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* セットリスト */
     .setlist-gallery-preview img {
         width: 100%;
         max-width: 400px;
