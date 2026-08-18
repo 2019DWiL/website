@@ -53,10 +53,25 @@ header ul li a:hover {
     margin: 0 auto;
 }
 .bandname {
-    /* background-color: aquamarine; */
     display: flex;
     margin: 0 auto;
 }
+
+.bandname h1 {
+    margin: 0;
+}
+
+.bandname span {
+    display: block;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    line-height: 1.4;
+    font-weight: normal;
+}
+
+.sp-break {
+    display: none;
+}
+
 h1 {
     font-size: 4rem;
 }
@@ -384,5 +399,9 @@ footer div {
 }
     .sns {
         text-align: center;
+    }
+    
+     .sp-break {
+        display: block;
     }
 }

@@ -16,6 +16,8 @@ ul {
     padding: 0;
 }
 
+
+
 /* ==========================================
    HEADER LAYOUT (ヘッダー全体)
    ========================================== */
@@ -71,7 +73,7 @@ header {
     /* height: calc(100vh - 100px); 画面全体の高さから、下げた分の100pxを引いたぴったりサイズ */
     
     /* 写真の設定（ブレンドモードは使わないので、写真本来の色が出ます！） */
-    background-image: url(../img/membertop.JPG);
+    background-image: url(../img/membertop.jpg);
     background-repeat: no-repeat;
     background-size: contain;   /* ★全体が絶対に画面内に収まるマジック */
     /* background-size: cover; */
@@ -338,6 +340,26 @@ footer {
 /* なるの(Vo/Ba) を「黒」にする */
 #member-naru .member-name h2 span {
     color: #000000;
+}
+
+.nav-btn {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #b8b8b8;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+li a.nav-btn {
+  color: #fff;
 }
 
 /* ==========================================
