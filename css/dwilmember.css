@@ -206,7 +206,7 @@ text-align: left;        /* 左寄せに変更 */
     color: #ffd60a; /* 視認性の良い少し濃いめの黄色 */
 }
 #member-satton .profile-text h3 {
-    color: #00ff40; /* 視認性の良い少し濃いめの黄色 */
+    color: #00781e; /* 視認性の良い少し濃いめの黄色 */
 }
 #member-tina .profile-text h3 {
     color: #0000ff; /* 視認性の良い少し濃いめの黄色 */
@@ -329,7 +329,7 @@ footer {
 
 /* さっとんの(Key/cho) を「緑」にする */
 #member-satton .member-name h2 span {
-    color: #00ff40;
+    color: #009a26;
 }
 
 /* Tinaの(Dr) を「青」にする */
@@ -433,6 +433,10 @@ li a.nav-btn {
     .member-sns a {
         font-size: 0.9rem;
         padding: 0.5rem 1.2rem; /* 指でタップしやすい大きさ */
+    }
+
+        .firstdiv {
+        width: 90%;
     }
     
 
