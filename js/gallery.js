@@ -78,9 +78,9 @@ function toggleSetlist() {
 
   // 各カテゴリごとのYouTubeリンクURLを定義
 const youtubeLinks = {
-  droppongi: 'https://www.youtube.com/watch?v=droppongi_url',
+  // droppongi: 'https://www.youtube.com/watch?v=droppongi_url',
   adm: '', // 例：リンクがない場合
-  mugenf: 'https://www.youtube.com/watch?v=mugenf_url',
+  // mugenf: 'https://www.youtube.com/watch?v=mugenf_url',
   trppngi: 'https://www.youtube.com/watch?v=dCobfRHQQXc',
   fshareido: 'https://www.youtube.com/watch?v=0GZUVEFdi2k&t=556s',
 };
