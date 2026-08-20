@@ -362,6 +362,13 @@ li a.nav-btn {
   color: #fff;
 }
 
+/* SNS一覧 */
+.sns-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 /* ==========================================
    ★ここを追加：スマートフォン・タブレット対応 (UI対応)
    ========================================== */
@@ -437,6 +444,26 @@ li a.nav-btn {
 
         .firstdiv {
         width: 90%;
+    }
+
+    .sns-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* ← これを追加 */
+        gap: 10px;
+        width: 100%;
+    }
+
+    .sns-list li {
+        width: auto;
+    }
+
+    .sns-list .snsnon {
+        display: inline-block;
+        width: auto;              /* ← 100%をやめる */
+        box-sizing: border-box;
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
     
 
