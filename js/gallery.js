@@ -102,7 +102,7 @@ if (isSetlist) {
       </ul>
       ${youtubeUrl ? `
         <button type="button" class="youtube-modal-btn" onclick="openYoutubeModal('${youtubeUrl}')">
-          <img src="img/sns/ytlogo.png" alt="YouTube" class="youtube-logo"> <!-- パスを修正 -->
+          <img src="img/sns/youtubewhite.svg" alt="YouTube" class="youtube-logo"> <!-- パスを修正 -->
         </button>
       ` : ''}
     </div>

@@ -325,6 +325,23 @@ footer div {
     height: auto !important;
 }
 
+.profile-text a.sns-pill {
+    display: inline-block;
+    background-color: #f5ee5a;
+    color: #000 !important;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px 24px;
+    border-radius: 999px;
+    margin-left: 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.profile-text a.sns-pill:hover {
+    opacity: 0.85;
+}
 
 @media screen and (max-width: 768px) {
     /* メニュー */
